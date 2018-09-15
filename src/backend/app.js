@@ -27,5 +27,4 @@ const setUpServer = async () => {
     return app;
 };
 
-
 export default setUpServer;
