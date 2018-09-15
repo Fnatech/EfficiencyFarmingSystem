@@ -8,8 +8,8 @@ const Button = styled.button`
   color: #00ad73;
   border-radius: 5px;
   font-size: 1em;
-  font-weight: 500;
-  width: ${props => props.width ? props.width : auto};
+  font-weight: 600;
+  width: ${props => props.width ? props.width : 'auto'};
 
   &:active {
     outline: none;

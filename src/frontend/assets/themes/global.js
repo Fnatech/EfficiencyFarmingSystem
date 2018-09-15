@@ -1,5 +1,4 @@
 import { injectGlobal } from 'styled-components';
-import bg from '../images/bg';
 
 export default () => injectGlobal`
   body {
