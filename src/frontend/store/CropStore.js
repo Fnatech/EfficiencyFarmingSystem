@@ -18,10 +18,7 @@ export default class CropStore {
   @action.bound
   async getLatestPhLevel() {
     const results = await this.soilService.find();
-    // console.log('results:', results);
-    // this.currentPhLevel = results[9];
     this.currentPhLevel = results[results.length - 1].value;
-    // this.currentPhLevel = results;
   }
 
   @action.bound
@@ -46,6 +43,3 @@ export default class CropStore {
     }); 
   }
 }
-
-// const store = new CropStore();
-// window.cropStore = store;

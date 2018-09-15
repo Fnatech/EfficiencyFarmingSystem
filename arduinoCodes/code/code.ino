@@ -135,11 +135,6 @@ void send() {
     //192.168.10.148 -> lab
     //192.168.254.103 -> dianzel
     delay(500);
-    
-//    char result[20];
-//    FloatToStringNew(phValueGlobal);
-//    Serial.println("****blbalbalbalbalbaalblab");
-//    Serial.println(result);
     Serial.println("****");
     String floatToString = (String)phValueGlobal;
     Serial.println(floatToString);
