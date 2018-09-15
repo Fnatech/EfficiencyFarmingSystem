@@ -1,17 +1,30 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js install
+  C:\Program Files\nodejs\node.exe C:\Users\BERNABE ARCEDE\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install
 
 PATH: 
-  C:\Program Files\ConEmu\ConEmu\Scripts;C:\Program Files\ConEmu;C:\Program Files\ConEmu\ConEmu;C:\Scripts\;C:\;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin;C:\Program Files\MongoDB\Server\3.6\bin;C:\Users\Brent Anthony Tudas\AppData\Local\Programs\Python\Python36;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Git\bin;C:\Program Files\Oracle\VirtualBox;C:\Windows\SysWOW64\Scripts;C:\Program Files\RedHat\java-1.8.0-openjdk-1.8.0.161-1\bin;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Microsoft SDKs\Azure\CLI\wbin;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Heroku\bin;C:\Users\Brent Anthony Tudas\AppData\Roaming\npm;C:\Program Files\Microsoft VS Code\bin;C:\Users\Brent Anthony Tudas\AppData\Local\Yarn\bin;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;
+  C:\Program Files\Cmder\bin;C:\Program Files\Cmder\vendor\conemu-maximus5\ConEmu\Scripts;C:\Program Files\Cmder\vendor\conemu-maximus5;C:\Program Files\Cmder\vendor\conemu-maximus5\ConEmu;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Common Files\lenovo\easyplussdk\bin;C:\Users\BERNABE ARCEDE\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Android\sdk1\tools;C:\Program Files\Android\Android Studio\gradle\gradle-2.14.1\bin;C:\Android\sdk\platform-tools;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\Java\jdk1.8.0_77\bin;C:\Program Files\Git\cmd;C:\Program Files\mariadb-10.2.8-winx64\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;E:\Program Files\erl10.0.1\bin;C:\Program Files (x86)\Elixir\bin;C:\Program Files\nodejs\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\BERNABE ARCEDE\.mix\escripts;C:\Program Files\MongoDB\Server\3.4\bin;C:\tools_SlingTraining\sam-r51\bin;C:\Users\BERNABE ARCEDE\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Heroku\bin;C:\Users\BERNABE ARCEDE\.windows-build-tools\python27;C:\Users\BERNABE ARCEDE\.windows-build-tools\python27\Scripts;C:\Users\BERNABE ARCEDE\AppData\Roaming\npm;C:\Users\BERNABE ARCEDE\.mix\escripts;E:\Program Files (x86)\Elixir\bin;C:\Program Files\erl10.0.1\bin;C:\Program Files\Git\mingw64;C:\Program Files\Git\usr\bin;C:\Program Files\Cmder
 
 Yarn version: 
-  1.3.2
+  1.9.4
 
 Node version: 
-  8.9.3
+  10.6.0
 
 Platform: 
   win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/mobx/-/mobx-5.1.1.tgz: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (C:\Users\BERNABE ARCEDE\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:138095:19)
+      at Object.onceWrapper (events.js:273:13)
+      at ClientRequest.emit (events.js:182:13)
+      at TLSSocket.emitTimeout (_http_client.js:706:34)
+      at Object.onceWrapper (events.js:273:13)
+      at TLSSocket.emit (events.js:182:13)
+      at TLSSocket.Socket._onTimeout (net.js:447:8)
+      at ontimeout (timers.js:427:11)
+      at tryOnTimeout (timers.js:289:5)
+      at listOnTimeout (timers.js:252:5)
 
 npm manifest: 
   {
@@ -40,6 +53,8 @@ npm manifest:
       "body-parser": "^1.18.3",
       "feathers-mongodb": "^3.1.0",
       "feathers-socketio": "^2.0.1",
+      "mobx": "^5.1.1",
+      "mobx-react": "^5.2.8",
       "mongodb": "^2.2.29",
       "nodemon": "^1.18.4",
       "prop-types": "^15.6.2",
@@ -3677,6 +3692,17 @@ Lockfile:
     dependencies:
       minimist "0.0.8"
   
+  mobx-react@^5.2.8:
+    version "5.2.8"
+    resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-5.2.8.tgz#059c7f29254d7cd36e103d79113103b40348d3bf"
+    dependencies:
+      hoist-non-react-statics "^2.5.0"
+      react-lifecycles-compat "^3.0.2"
+  
+  mobx@^5.1.1:
+    version "5.1.1"
+    resolved "https://registry.yarnpkg.com/mobx/-/mobx-5.1.1.tgz#b8579ea7e7fbb07b79d56a71c3191287afc45f93"
+  
   mongodb-core@2.1.20:
     version "2.1.20"
     resolved "https://registry.yarnpkg.com/mongodb-core/-/mongodb-core-2.1.20.tgz#fece8dd76b59ee7d7f2d313b65322c160492d8f1"
@@ -4443,7 +4469,7 @@ Lockfile:
     version "16.5.1"
     resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.5.1.tgz#c6e8734fd548a22e1cef4fd0833afbeb433b85ee"
   
-  react-lifecycles-compat@^3.0.4:
+  react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
     version "3.0.4"
     resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   
@@ -5735,13 +5761,3 @@ Lockfile:
   yeast@0.1.2:
     version "0.1.2"
     resolved "https://registry.yarnpkg.com/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
-
-Trace: 
-  Error: socket hang up
-      at TLSSocket.onHangUp (_tls_wrap.js:1135:19)
-      at Object.onceWrapper (events.js:313:30)
-      at emitNone (events.js:111:20)
-      at TLSSocket.emit (events.js:208:7)
-      at endReadableNT (_stream_readable.js:1056:12)
-      at _combinedTickCallback (internal/process/next_tick.js:138:11)
-      at process._tickCallback (internal/process/next_tick.js:180:9)

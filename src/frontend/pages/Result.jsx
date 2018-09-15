@@ -98,7 +98,20 @@ const Component = inject('store')(observer(({ store }) => (
         </TextContainer>
       </PHLevelContainer>
     </ResultContainer>
-    <Recommendations />
+    <Recommendations>
+      {
+        store.recommendedCrops.length <= 0 ? 
+        <div>
+          No recommendations found
+        </div> : 
+        store.recommendedCrops.map(crop =>
+          <div key={crop._id}>
+            <div>Name: {crop.name}</div>
+            <div>Range PH Level{crop.minRangePhLevel.toFixed(1)}-{crop.maxRangePhLevel.toFixed(1)}</div>
+          </div>
+        )
+      }
+    </Recommendations>
   </StyledDiv>
 
 )));

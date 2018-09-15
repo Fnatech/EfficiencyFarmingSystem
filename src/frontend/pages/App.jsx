@@ -7,6 +7,7 @@ export default class MainContainer extends React.Component {
 
   componentDidMount() {
     this.props.store.polling();
+    this.props.store.retrieveAllCrops();
   }
   
   render() {
