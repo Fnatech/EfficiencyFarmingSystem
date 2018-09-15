@@ -22,7 +22,6 @@ app
 
 const setUpServer = async () => {
     const db = await MongoClient.connect(app.get('mongoURI'),  { useNewUrlParser: true });
-    console.log('connected to db');
     app.configure(services(db));
     return app;
 };

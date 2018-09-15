@@ -1,8 +1,12 @@
+import soilService from './soil';
+import cropService from './crop';
+
 function setUpAllServices(db){
     return function() {
         const app = this;
         app
-            .configure()
+            .configure(soilService(db))
+            .configure(cropService(db))
     }
 }
 
