@@ -5,7 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "start:dev": "nodemon -r source-map-support/register -r babel-register src/backend/index.js",
-    "bundle": "npx webpack -w"
+    "bundle": "npx webpack -w",
+    "seed": "node -r babel-register src/seeds/runSeeds.js"
   },
   "author": "",
   "license": "ISC",
