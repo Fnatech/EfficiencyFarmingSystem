@@ -6,7 +6,7 @@ import { MongoClient } from 'mongodb'
 
 import path from 'path';
 
-// import services from './services';
+import services from './services';
 
 const app = express(feathers());
 
@@ -22,10 +22,8 @@ app
 
 const setUpServer = async () => {
     const db = await MongoClient.connect(app.get('mongoURI'),  { useNewUrlParser: true });
-    console.log('connected to db');
-    // app.configure(services());
+    app.configure(services(db));
     return app;
 };
-
 
 export default setUpServer;
