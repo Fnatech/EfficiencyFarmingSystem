@@ -1,8 +1,26 @@
 import React from 'react';
+import { inject, observer } from 'mobx-react';
 import Routes from '../Routes';
 
-export default () => (
-  <div>
-    <Routes />
-  </div>
-);
+@inject('store') @observer
+export default class MainContainer extends React.Component {
+
+  componentDidMount() {
+    this.props.store.retrieveAllCrops();
+    this.props.store.polling();
+  }
+  
+  render() {
+    return (
+      <div>
+        <Routes />
+      </div>
+    );
+  }
+}
+
+// export default () => (
+//   <div>
+//     <Routes />
+//   </div>
+// );

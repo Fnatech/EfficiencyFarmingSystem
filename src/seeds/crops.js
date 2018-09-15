@@ -22,7 +22,7 @@ const seed = async () => {
     }, {
         name: 'Cabbage',
         minRangePhLevel: 6.0,
-        maxRangePhLevel: 7.0,
+        maxRangePhLevel: 8.0,
     }, {
         name: 'Potato',
         minRangePhLevel: 4.8,
