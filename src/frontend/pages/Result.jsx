@@ -84,10 +84,9 @@ const Recommendations = styled.div`
   margin: 30px auto;
 `;
 
-export default inject('store')(observer(({ store }) => (
+const Component = inject('store')(observer(({ store }) => (
   <StyledDiv>
     <Title>Results</Title>
-    {console.log('CROP:', store)}
     <ResultContainer>
       <ImageContainer>
         <Image />
@@ -95,10 +94,13 @@ export default inject('store')(observer(({ store }) => (
       <PHLevelContainer>
         <TextContainer>
           <PHLabel>pH Level</PHLabel>
-          <PHValue>{store.currentPhLevel.toFixed(2)}</PHValue>
+          <PHValue>{store.currentPhLevel} </PHValue> 
         </TextContainer>
       </PHLevelContainer>
     </ResultContainer>
     <Recommendations />
   </StyledDiv>
+
 )));
+
+export default Component;

@@ -2742,7 +2742,7 @@ hmac-drbg@^1.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
-hoist-non-react-statics@^2.5.0:
+hoist-non-react-statics@^2.3.1, hoist-non-react-statics@^2.5.0:
   version "2.5.5"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
 
@@ -3598,16 +3598,15 @@ mkdirp@0.5.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0:
   dependencies:
     minimist "0.0.8"
 
-mobx-react@^5.2.8:
-  version "5.2.8"
-  resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-5.2.8.tgz#059c7f29254d7cd36e103d79113103b40348d3bf"
+mobx-react@5.0.0:
+  version "5.0.0"
+  resolved "http://registry.npmjs.org/mobx-react/-/mobx-react-5.0.0.tgz#8d5a33be376fa22b184a6f555d40a6a3a8459a16"
   dependencies:
-    hoist-non-react-statics "^2.5.0"
-    react-lifecycles-compat "^3.0.2"
+    hoist-non-react-statics "^2.3.1"
 
-mobx@^5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/mobx/-/mobx-5.1.1.tgz#b8579ea7e7fbb07b79d56a71c3191287afc45f93"
+mobx@4.1.0:
+  version "4.1.0"
+  resolved "http://registry.npmjs.org/mobx/-/mobx-4.1.0.tgz#e4a9679cdafbe215b20e32ef93a7031845b3f1af"
 
 mongodb-core@2.1.20:
   version "2.1.20"
@@ -4375,7 +4374,7 @@ react-is@^16.3.1:
   version "16.5.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.5.1.tgz#c6e8734fd548a22e1cef4fd0833afbeb433b85ee"
 
-react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
+react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { observer, inject } from 'mobx-react';
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
 import soil from '../assets/images/soil';
@@ -48,7 +49,7 @@ const ButtonContainer = styled.div`
   right: 0;
 `;
 
-export default () => (
+export default inject('store')(observer(({ store }) => (
   <StyledDiv>
     <Title>Soil Testing</Title>
     <ImageContainer>
@@ -56,8 +57,11 @@ export default () => (
     </ImageContainer>
     <ButtonContainer>
       <Link to="/result">
-        <Button name="Test Soil" width="80%" action={() => console.log('go to result page')}/>
+        <Button name="Test Soil" width="80%" action={async () => {
+          store.toggleShow();
+          // await store.getLatestPhLevel(); 
+        }}/>
       </Link>
     </ButtonContainer>
   </StyledDiv>
-);
+)));
