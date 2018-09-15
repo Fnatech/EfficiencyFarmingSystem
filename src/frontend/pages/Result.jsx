@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { inject, observer } from 'mobx-react';
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
 import soil from '../assets/images/soil';
@@ -83,9 +84,10 @@ const Recommendations = styled.div`
   margin: 30px auto;
 `;
 
-export default () => (
+export default inject('store')(observer(({ store }) => (
   <StyledDiv>
     <Title>Results</Title>
+    {console.log('CROP:', store)}
     <ResultContainer>
       <ImageContainer>
         <Image />
@@ -93,10 +95,10 @@ export default () => (
       <PHLevelContainer>
         <TextContainer>
           <PHLabel>pH Level</PHLabel>
-          <PHValue>06.54</PHValue>
+          <PHValue>{store.currentPhLevel.toFixed(2)}</PHValue>
         </TextContainer>
       </PHLevelContainer>
     </ResultContainer>
     <Recommendations />
   </StyledDiv>
-);
+)));

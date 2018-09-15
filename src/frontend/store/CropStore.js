@@ -1,7 +1,7 @@
 import { observable, action } from 'mobx';
 import app from '../app';
 
-class CropStore {
+export default class CropStore {
 
   @observable currentPhLevel = 0;
   @observable recommendedCrops = [];
@@ -31,5 +31,5 @@ class CropStore {
   }
 }
 
-const store = new CropStore();
-window.cropStore = store;
+// const store = new CropStore();
+// window.cropStore = store;
