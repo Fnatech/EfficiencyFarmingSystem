@@ -13,7 +13,6 @@ export default class CropStore {
   @action.bound
   toggleShow() {
     this.show = !this.show;
-    console.log('toggled!');
   }
 
   @action.bound
@@ -27,7 +26,7 @@ export default class CropStore {
     setInterval(async () => {
       if (this.show) {
         await this.getLatestPhLevel();
-        this.getRecommendedCrops(this.currentPhLevel);
+        this.getRecommendedCrops();
       }
     }, 1000);
   }
@@ -38,9 +37,9 @@ export default class CropStore {
   }
 
   @action.bound
-  getRecommendedCrops(phLevel) {
-    this.recommendedCrops = this.allCrops.filter((crop) => {
-      return crop.minRangePhLevel <= phLevel && crop.maxRangePhLevel >= phLevel;
+  getRecommendedCrops() {
+    this.recommendedCrops = this.allCrops.filter(crop => {
+      return this.currentPhLevel >= crop.minRangePhLevel && this.currentPhLevel <= crop.maxRangePhLevel;
     }); 
   }
 }
