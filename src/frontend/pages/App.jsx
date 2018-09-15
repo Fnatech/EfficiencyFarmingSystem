@@ -1,9 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
-import Home from './Home';
+import Routes from '../Routes';
 
 export default () => (
   <div>
-    <Home />
+    <Routes />
   </div>
 );
