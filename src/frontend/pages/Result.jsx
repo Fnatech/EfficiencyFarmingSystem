@@ -111,7 +111,7 @@ const Component = inject('store')(
               cropName={crop.name}
               minpHLevel={crop.minRangePhLevel.toFixed(1)}
               maxpHLevel={crop.maxRangePhLevel.toFixed(1)}
-              img="http://res.cloudinary.com/starksten/image/upload/v1536994836/hackathon/soil.png"
+              img={crop.img}
             />
           ))
         )}

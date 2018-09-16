@@ -47,8 +47,8 @@ const CropDetails = styled.div`
   font-size: 0.7em;
 `;
 
-export default ({ cropName, img, minpHLevel, maxpHLevel, _id }) => (
-  <StyledDiv key={id}>
+export default ({ cropName, img, minpHLevel, maxpHLevel }) => (
+  <StyledDiv>
     <ImageContainer img={img} />
     <Details>
       <CropName>{cropName}</CropName>
