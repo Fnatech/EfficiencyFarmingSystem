@@ -1,4 +1,4 @@
-import setupService from './setupService';
+import setUpService from './setUpService';
 import beforeInsertHook from '../hooks/beforeInsertHook';
 
 function setupSoilService(db) {
@@ -6,7 +6,7 @@ function setupSoilService(db) {
     create: [beforeInsertHook()]
   };
   const afterHook = {};
-  return setupService(db, '/soil', 'soil', beforeHook, afterHook);
+  return setUpService(db, '/soil', 'soil', beforeHook, afterHook);
 }
 
 export default setupSoilService;

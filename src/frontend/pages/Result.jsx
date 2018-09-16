@@ -4,6 +4,7 @@ import { inject, observer } from 'mobx-react';
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
 import soil from '../assets/images/soil';
+import RecommendationCard from '../components/RecommendationCard';
 
 const StyledDiv = styled.div`
   text-align: center;
@@ -21,7 +22,7 @@ const Title = styled.div`
 
 const ResultContainer = styled.div`
   width: 90%;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
   height: 150px;
   display: grid;
   grid-template-areas: 'image phLevel';
@@ -78,42 +79,45 @@ const PHValue = styled.p`
 `;
 
 const Recommendations = styled.div`
-  border: 1px solid white;
-  height: 50vh;
-  width: 90%;
-  margin: 30px auto;
+  height: 60vh;
+  width: 100%;
+  margin: 10px auto;
+  overflow-y: auto;
+  padding-bottom: 20px;
 `;
 
-const Component = inject('store')(observer(({ store }) => (
-  <StyledDiv>
-    <Title>Results</Title>
-    <ResultContainer>
-      <ImageContainer>
-        <Image />
-      </ImageContainer>
-      <PHLevelContainer>
-        <TextContainer>
-          <PHLabel>pH Level</PHLabel>
-          <PHValue>{store.currentPhLevel} </PHValue> 
-        </TextContainer>
-      </PHLevelContainer>
-    </ResultContainer>
-    <Recommendations>
-      {
-        store.recommendedCrops.length <= 0 ? 
-        <div>
-          No recommendations found
-        </div> : 
-        store.recommendedCrops.map(crop =>
-          <div key={crop._id}>
-            <div>Name: {crop.name}</div>
-            <div>Range PH Level{crop.minRangePhLevel.toFixed(1)}-{crop.maxRangePhLevel.toFixed(1)}</div>
-          </div>
-        )
-      }
-    </Recommendations>
-  </StyledDiv>
-
-)));
+const Component = inject('store')(
+  observer(({ store }) => (
+    <StyledDiv>
+      <Title>Results</Title>
+      <ResultContainer>
+        <ImageContainer>
+          <Image />
+        </ImageContainer>
+        <PHLevelContainer>
+          <TextContainer>
+            <PHLabel>pH Level</PHLabel>
+            <PHValue>{store.currentPhLevel} </PHValue>
+          </TextContainer>
+        </PHLevelContainer>
+      </ResultContainer>
+      <Recommendations>
+        {store.recommendedCrops.length <= 0 ? (
+          <div>No recommendations found</div>
+        ) : (
+          store.recommendedCrops.map((crop) => (
+            <RecommendationCard
+              id={crop._id}
+              cropName={crop.name}
+              minpHLevel={crop.minRangePhLevel.toFixed(1)}
+              maxpHLevel={crop.maxRangePhLevel.toFixed(1)}
+              img="http://res.cloudinary.com/starksten/image/upload/v1536994836/hackathon/soil.png"
+            />
+          ))
+        )}
+      </Recommendations>
+    </StyledDiv>
+  )),
+);
 
 export default Component;
