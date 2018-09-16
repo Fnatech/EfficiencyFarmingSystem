@@ -79,7 +79,6 @@ const PHValue = styled.p`
 `;
 
 const Recommendations = styled.div`
-  // border: 1px solid white;
   height: 60vh;
   width: 100%;
   margin: 10px auto;
@@ -108,9 +107,10 @@ const Component = inject('store')(
         ) : (
           store.recommendedCrops.map((crop) => (
             <RecommendationCard
-              _id="alksdjlaksjd"
-              cropName="Banana"
-              phLevelRange="5 - 6.2"
+              id={crop._id}
+              cropName={crop.name}
+              minpHLevel={crop.minRangePhLevel.toFixed(1)}
+              maxpHLevel={crop.maxRangePhLevel.toFixed(1)}
               img="http://res.cloudinary.com/starksten/image/upload/v1536994836/hackathon/soil.png"
             />
           ))

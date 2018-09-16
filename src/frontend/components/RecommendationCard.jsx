@@ -9,7 +9,7 @@ const StyledDiv = styled.div`
   display: grid;
   grid-template-areas: 'img details';
   grid-auto-rows: 1fr 3fr;
-  color: #00B973;
+  color: #00b973;
   margin: 20px auto 0 auto;
 `;
 
@@ -47,12 +47,14 @@ const CropDetails = styled.div`
   font-size: 0.7em;
 `;
 
-export default ({ cropName, img, phLevelRange, _id }) => (
-  <StyledDiv key={_id}>
+export default ({ cropName, img, minpHLevel, maxpHLevel, _id }) => (
+  <StyledDiv key={id}>
     <ImageContainer img={img} />
     <Details>
       <CropName>{cropName}</CropName>
-      <CropDetails>pH Level Range{phLevelRange}</CropDetails>
+      <CropDetails>
+        pH Level Range: {minpHLevel}-{maxpHLevel}
+      </CropDetails>
     </Details>
   </StyledDiv>
 );
