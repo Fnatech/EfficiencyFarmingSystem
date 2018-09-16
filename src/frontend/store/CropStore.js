@@ -28,7 +28,7 @@ export default class CropStore {
         await this.getLatestPhLevel();
         this.getRecommendedCrops();
       }
-    }, 1000);
+    }, 100);
   }
 
   @action.bound

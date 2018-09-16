@@ -33,7 +33,9 @@ SoftwareSerial esp8266(2, 3); /* RX:D3, TX:D2 */
 #define printInterval 800
 #define ArrayLenth  40    //times of collection
 int pHArray[ArrayLenth];   //Store the average value of the sensor feedback
-int pHArrayIndex=0;  
+int pHArrayIndex=0;
+
+float pin1;
 
 void setup() {
   pinMode(LED,OUTPUT);  
@@ -55,29 +57,31 @@ void setup() {
 
 void loop() {
 
-  static unsigned long samplingTime = millis();
-  static unsigned long printTime = millis();
-  static float pHValue,voltage;
-  if(millis()-samplingTime > samplingInterval)
-  {
-      pHArray[pHArrayIndex++]=analogRead(SensorPin);
-      if(pHArrayIndex==ArrayLenth)pHArrayIndex=0;
-      voltage = avergearray(pHArray, ArrayLenth)*5.0/1024;
-      pHValue = 3.5*voltage+Offset;
-      samplingTime=millis();
-  }
-  if(millis() - printTime > printInterval)   //Every 800 milliseconds, print a numerical, convert the state of the LED indicator
-  {
-        Serial.print("Voltage:");
-        Serial.print(voltage,2);
-        Serial.print("    pH value: ");
-        Serial.println(pHValue,2);
-        phValueGlobal = pHValue;
-        digitalWrite(LED,digitalRead(LED)^1);
-        printTime=millis();
-  }
+//  static unsigned long samplingTime = millis();
+//  static unsigned long printTime = millis();
+//  static float pHValue,voltage;
+//  if(millis()-samplingTime > samplingInterval)
+//  {
+//      pHArray[pHArrayIndex++]=analogRead(SensorPin);
+//      if(pHArrayIndex==ArrayLenth)pHArrayIndex=0;
+//      voltage = avergearray(pHArray, ArrayLenth)*5.0/1024;
+//      pHValue = 3.5*voltage+Offset;
+//      samplingTime=millis();
+//  }
+//  if(millis() - printTime > printInterval)   //Every 800 milliseconds, print a numerical, convert the state of the LED indicator
+//  {
+//        Serial.print("Voltage:");
+//        Serial.print(voltage,2);
+//        Serial.print("    pH value: ");
+//        Serial.println(pHValue,2);
+//        phValueGlobal = pHValue;
+//        digitalWrite(LED,digitalRead(LED)^1);
+//        printTime=millis();
+//  }
+
+  pin1 = analogRead(A0);
   delay(1000);
-       send();
+  send();
 //   getData();
 //   checkResponseValue();
 //   delay(1000);
@@ -135,6 +139,11 @@ void send() {
     //192.168.10.148 -> lab
     //192.168.254.103 -> dianzel
     delay(500);
+    
+//    char result[20];
+//    FloatToStringNew(phValueGlobal);
+//    Serial.println("****blbalbalbalbalbaalblab");
+//    Serial.println(result);
     Serial.println("****");
     String floatToString = (String)phValueGlobal;
     Serial.println(floatToString);

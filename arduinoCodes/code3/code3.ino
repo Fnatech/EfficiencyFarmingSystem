@@ -5,9 +5,13 @@
 static char respBuffer[4096];
 
 // global constant
-const char ssid[] = "ZTEH108N_09850";
-const char ssidPass[] = "bawaldownload888";
-const char hostName[] = "http://192.168.254.104";
+//const char ssid[] = "ZTEH108N_09850";
+//const char ssidPass[] = "bawaldownload888";
+//const char hostName[] = "http://192.168.1.100";
+
+const char ssid[] = "The-Promised-LAN-Jr";
+const char ssidPass[] = "passwordallcaps";
+const char hostName[] = "http://192.168.1.100";
 const short hostPort = 9000;
 
 unsigned long lastTimeMillis = 0;
@@ -88,7 +92,8 @@ void reset() {
 }
 
 void connect() {
-  const char cmd[] = "AT+CWJAP=\"ZTEH108N_09850\",\"bawaldownload888\"";
+//  const char cmd[] = "AT+CWJAP=\"ZTEH108N_09850\",\"bawaldownload888\"";
+  const char cmd[] = "AT+CWJAP=\"The-Promised-LAN-Jr\",\"passwordallcaps\"";
   esp8266.println(cmd);
   delay(4000);
   if (esp8266.find("OK")) {
@@ -105,8 +110,8 @@ void printResponse() {
 }
 
 void establishTCPConnection() {
-  //  const char cmd[] = "AT+CIPSTART=\"TCP\",\"192.168.8.104\",3000";
-  const char cmd[] = "AT+CIPSTART=\"TCP\",\"192.168.254.104\",9000";
+  //  const char cmd[] = "AT+CIPSTART=\"TCP\",\"192.168.8.107\",3000";
+  const char cmd[] = "AT+CIPSTART=\"TCP\",\"192.168.1.100\",9000";
   esp8266.println(cmd);
   if (esp8266.find("OK")) {
     //    Serial.println("TCP Connection Ready.");
@@ -129,7 +134,7 @@ void send() {
 
     esp8266.println("AT+CIPMUX=1");
     delay(500);
-    esp8266.println("AT+CIPSTART=4,\"TCP\",\"192.168.254.104\",9000");
+    esp8266.println("AT+CIPSTART=4,\"TCP\",\"192.168.1.100\",9000");
     //192.168.10.148 -> lab
     //192.168.254.103 -> dianzel
     delay(500);
@@ -155,7 +160,7 @@ void send() {
 void getData() {
   esp8266.println("AT+CIPMUX=1");
   delay(500);
-  esp8266.println("AT+CIPSTART=4,\"TCP\",\"192.168.254.104\",9000");
+  esp8266.println("AT+CIPSTART=4,\"TCP\",\"192.168.1.100\",9000");
   delay(1000);
   String cmd = "GET /custom/5aa6a508f4ad6f09543c8a2b HTTP/1.1";
   esp8266.println("AT+CIPSEND=4," + String(cmd.length() + 4));
